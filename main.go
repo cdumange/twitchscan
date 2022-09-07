@@ -33,6 +33,9 @@ func main() {
 	http.Handle("/", &app.Handler{
 		Name:        "test",
 		Description: "first test",
+		Styles: []string{
+			"/web/css/global.css",
+		},
 	})
 
 	if err := server.ListenAndServe(); err != nil {
