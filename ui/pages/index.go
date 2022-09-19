@@ -11,7 +11,11 @@ import (
 func NewIndex(app fyne.App) fyne.Window {
 	w := app.NewWindow(consts.AppName)
 	w.Resize(fyne.NewSize(600, 400))
-	w.SetContent(canvas.NewImageFromResource(images.ResourceHarleyPng))
+	w.SetContent(generateIndex())
 	w.CenterOnScreen()
 	return w
+}
+
+func generateIndex() fyne.CanvasObject {
+	return canvas.NewImageFromResource(images.ResourceHarleyPng)
 }
